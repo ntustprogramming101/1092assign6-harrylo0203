@@ -21,7 +21,7 @@ class Dinosaur extends Enemy {
      
   }
   
-  void update(){
+    void update(){
     x += currentSpeed ;
     
     if( x+SOIL_SIZE >= width || x <= 0){
@@ -30,7 +30,7 @@ class Dinosaur extends Enemy {
     }
     
     if( y == player.y && currentSpeed > 0 && x < player.x || y == player.y && currentSpeed < 0 && x > player.x){
-        x += TRIGGERED_SPEED_MULTIPLIER;
+        x *= TRIGGERED_SPEED_MULTIPLIER;
     }else{
       x += currentSpeed ;
     }
